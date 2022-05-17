@@ -22,6 +22,7 @@ function mon_theme_custom_post_type()
                 'singular_name' => __('boardgame'),
             ),
             'public' => true,
+            'supports' => array('title', 'editor', 'thumbnail'),
             'show_in_rest' => true,
             'menu_position' => 3,
             'menu_icon' => 'dashicons-buddicons-activity',
