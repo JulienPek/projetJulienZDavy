@@ -1,5 +1,5 @@
 <?php
-//coucou
+// envoie sur dossier distant de julien
 <<<<<<< HEAD
 function montheme_setup()
 {
