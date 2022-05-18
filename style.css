@@ -1,7 +1,20 @@
+<<<<<<< .merge_file_a14220
 /* 
 Theme Name: SiteVitrine
 */
 
 .navbar-brand {
     width: 10em !important;
+=======
+/*
+Theme Name: Mon theme
+*/
+
+body {
+    background-color: aqua;
+}
+
+#site-title {
+    color: green;
+>>>>>>> .merge_file_a12888
 }
