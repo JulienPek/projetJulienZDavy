@@ -1,5 +1,7 @@
 <?php 
 
+// test si je suis connecté avec ton dossier a distance
+
 function montheme_setup() {
     add_theme_support('post-thumbnails');
     add_theme_support('custom-logo');
