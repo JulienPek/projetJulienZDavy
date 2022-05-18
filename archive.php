@@ -5,9 +5,10 @@ if (have_posts()) :
         // Display post content
 ?>
         <h1><?php the_title(); ?></h1>
-        <?php the_content();
-        the_category(); ?>
 <?php
+        the_category();
+        the_author();
+        the_time();
     endwhile;
 endif;
 get_footer();
