@@ -1,1 +1,1 @@
-Ceci est un message d'erreur
+Ceci est une page d'erreur
