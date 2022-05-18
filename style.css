@@ -1,3 +1,7 @@
 /* 
 Theme Name: SiteVitrine
 */
+
+.navbar-brand {
+    width: 10em !important;
+}
