@@ -1,5 +1,18 @@
+<<<<<<< HEAD
 /* 
 Theme Name: SiteVitrine
+=======
+<<<<<<< .merge_file_a14220
+/* 
+Theme Name: SiteVitrine
+*/
+
+.navbar-brand {
+    width: 10em !important;
+=======
+/*
+Theme Name: Mon theme
+>>>>>>> 2abd9a78837032d7a6246f1013e75f19a6097eed
 */
 
 <<<<<<< HEAD
@@ -8,5 +21,13 @@ Theme Name: SiteVitrine
 =======
 body {
     background-color: aqua;
+<<<<<<< HEAD
 >>>>>>> parent of e583da5 (commit du Mercredi)
+=======
+}
+
+#site-title {
+    color: green;
+>>>>>>> .merge_file_a12888
+>>>>>>> 2abd9a78837032d7a6246f1013e75f19a6097eed
 }
