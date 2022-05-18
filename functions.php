@@ -1,4 +1,7 @@
 <?php
+
+// Essai de connexion a la branch davy du github de Julien
+
 function montheme_setup()
 {
     add_theme_support('post-thumbnails');
