@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 <?php
 // envoie sur dossier distant de julien
-<<<<<<< HEAD
+
 function montheme_setup()
 {
 =======
