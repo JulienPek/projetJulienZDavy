@@ -1,6 +1,6 @@
 <?php
 
-// Essai de connexion a la branch davy du github de Julien
+// Essai de connexion a la branch davy du github de Julien 2eme essai
 
 function montheme_setup()
 {
