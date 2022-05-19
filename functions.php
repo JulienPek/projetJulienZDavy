@@ -1,17 +1,25 @@
 <?php
 function montheme_setup()
 {
+<<<<<<< HEAD
     register_nav_menu('main', 'menu_principal');
     add_theme_support('custom-logo');
     add_theme_support('post-thumbnails');
+=======
+   add_theme_support('post-thumbnails');
+   add_theme_support('custom-logo');
+   register_nav_menu('main' ,'menu principal');
+>>>>>>> d135cca409c803785db2ef09244c7f9e34709cb5
 }
 
 function montheme_enqueue_styles()
 {
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css');
+    wp_enqueue_style('bootstrap-icon','https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css');
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_script('script', get_template_directory_uri());
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js', [], false, true);
+    
 }
 // fonction pour créer un nouveau type de contenu avec taxonmie
 function mon_theme_custom_post_type()

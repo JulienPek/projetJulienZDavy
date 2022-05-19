@@ -2,6 +2,11 @@
 Theme Name: SiteVitrine
 */
 
-.navbar-brand {
-    width: 10em !important;
+body {
+    /*background-color: aqua;*/
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
 }
