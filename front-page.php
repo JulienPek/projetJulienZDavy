@@ -6,14 +6,14 @@ if (have_posts()) :
 ?>
         <div class="container">
             <h2><?php the_title() ?></h2>
-        <div><?php the_content() ?></div>
-        <span class="pills"><?php the_category() ?></span>
-        <div class="row">
-            <div class="col">
-                <img class="img-fluid" src="<?php the_field("image_gauche") ?>" >
-            </div>
-            <div class="col">
-                <p><?php the_field("text_droite") ?></p>
+            <div><?php the_content() ?></div>
+            <div class="row">
+                <div class="col">
+                    <img class="img-fluid" src="<?php the_field('image_a_gauche') ?>" alt="">
+                </div>
+                <div class="col">
+                    <p class="text-left"><?php the_field('texte_a_droite') ?></p>
+                </div>
             </div>
         </div>
 <?php endwhile;
