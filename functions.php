@@ -1,6 +1,8 @@
 <?php
 function montheme_setup()
 {
+    register_nav_menu('main', 'menu_principal');
+    add_theme_support('custom-logo');
     add_theme_support('post-thumbnails');
 }
 
@@ -28,6 +30,7 @@ function mon_theme_custom_post_type()
             'menu_icon' => 'dashicons-buddicons-activity',
             'has_archive' => true,
             'taxonomies' => array('Gamecats'),
+            'show_in_nav_menus' => true
         )
     );
 }
@@ -44,7 +47,8 @@ function montheme_taxonomy()
         'hierarchical' => true,
         'has_archive' => true,
         'show_in_rest' => true,
-        'show_admin_column' => true
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true
     ]);
 }
 
