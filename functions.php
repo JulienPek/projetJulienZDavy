@@ -1,9 +1,9 @@
 <?php
 function montheme_setup()
 {
-    add_theme_support('post-thumbnails');
+    register_nav_menu('main', 'menu_principal');
     add_theme_support('custom-logo');
-    register_nav_menu('main', 'menu principal');
+    add_theme_support('post-thumbnails');
 }
 
 function montheme_enqueue_styles()
