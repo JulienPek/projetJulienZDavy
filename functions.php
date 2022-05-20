@@ -1,9 +1,9 @@
 <?php
 function montheme_setup()
 {
-   add_theme_support('post-thumbnails');
-   add_theme_support('custom-logo');
-   register_nav_menu('main' ,'menu principal');
+    register_nav_menu('main', 'menu_principal');
+    add_theme_support('custom-logo');
+    add_theme_support('post-thumbnails');
 }
 
 function montheme_enqueue_styles()
@@ -48,7 +48,8 @@ function montheme_taxonomy()
         'hierarchical' => true,
         'has_archive' => true,
         'show_in_rest' => true,
-        'show_admin_column' => true
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true
     ]);
 }
 
