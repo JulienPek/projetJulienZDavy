@@ -3,10 +3,14 @@ Theme Name: SiteVitrine
 */
 
 body {
-    /*background-color: aqua;*/
+    background-color: rgb(185, 236, 236);
 }
 
-img {
+.card {
+    background-color: bisque;
+}
+
+/* img {
     width: 100%;
     object-fit: contain;
-}
+} */
