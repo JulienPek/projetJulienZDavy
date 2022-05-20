@@ -6,7 +6,7 @@ body {
     /*background-color: aqua;*/
 }
 
-img {
+.boardGamesSingleImg {
     width: 100%;
     object-fit: contain;
 }

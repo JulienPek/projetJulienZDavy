@@ -22,8 +22,8 @@ function mon_theme_custom_post_type()
         'boardgame',
         array(
             'labels' => array(
-                'name' => __('boardgames'),
-                'singular_name' => __('boardgame'),
+                'name' => 'boardgames',
+                'singular_name' => 'boardgame',
             ),
             'public' => true,
             'supports' => array('title', 'editor', 'thumbnail'),
@@ -31,7 +31,7 @@ function mon_theme_custom_post_type()
             'menu_position' => 3,
             'menu_icon' => 'dashicons-buddicons-activity',
             'has_archive' => true,
-            'taxonomies' => array('Gamecats'),
+            'taxonomies' => array('gamecats'),
         )
     );
 }
@@ -39,7 +39,7 @@ function mon_theme_custom_post_type()
 // Fonction pour créer une taxonomy personalisé (category et tags(etiquettes))
 function montheme_taxonomy()
 {
-    register_taxonomy('Gamecat', 'boardgame', [
+    register_taxonomy('gamecats', 'boardgame', [
         'labels' => [
             'name' => 'Gamecats',
             'singular_name' => 'Gamecat',
@@ -66,9 +66,30 @@ function montheme_menu_link_css($atts)
     return $atts;
 }
 
+function monTheme_dropdown_class( $classes) {
+    $classes[] = "dropdown-menu";
+    return $classes;
+}
+
+function monTheme_dropdown_menu_attr($atts, $items, $depth){
+    $dropdown = [42];
+    if(in_array($items->ID, $dropdown)){
+        $atts['class'] = "nav-link dropdown-toggle";
+        $atts['id'] = "navbarDropdown";
+        $atts['role'] = "button";
+        $atts['data-bs-toggle'] = "dropdown";
+        // Penser à ajouter aux éléments de sous menu dans l'admin la classe dropdown-item
+    }
+    return $atts;
+}
+
+
+
 add_action('after_setup_theme', 'montheme_setup');
 add_action('init', 'mon_theme_custom_post_type');
 add_action('init', 'montheme_taxonomy');
 add_action('wp_enqueue_scripts', 'montheme_enqueue_styles');
 add_filter('nav_menu_css_class', 'montheme_menu_class_css');
 add_filter('nav_menu_link_attributes', 'montheme_menu_link_css');
+add_filter('nav_menu_submenu_css_class', 'monTheme_dropdown_class' );
+add_filter('nav_menu_link_attributes', 'monTheme_dropdown_menu_attr',10, 3 );
