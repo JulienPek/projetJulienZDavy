@@ -7,6 +7,10 @@ function montheme_supports()
     add_theme_support('menus');
     register_nav_menu('header', 'En tête du menu');
     register_nav_menu('footer', 'Pied de page');
+
+    add_image_size('post-thumbnail', 350, 215, true);
+    /* remove_image_size('medium');
+    add_image_size('medium', 500, 500); */
 }
 
 function montheme_register_assests()
@@ -62,9 +66,16 @@ function montheme_pagination()
     echo '</nav>';
 }
 
+function montheme_init(){
+    register_taxonomy('')
+}
+
+add_action('ini', 'montheme_init');
 add_action('after_setup_theme', 'montheme_supports');
 add_action('wp_enqueue_scripts', 'montheme_register_assests');
 add_filter('document_title_separator', 'montheme_title_separator');
 add_filter('document_title_parts', 'montheme_document_title_parts');
 add_filter('nav_menu_css_class', 'montheme_menu_class');
 add_filter('nav_menu_link_attributes', 'montheme_menu_link_class');
+require_once('metaboxes/sponso.php');
+SponsoMetaBox::register();
