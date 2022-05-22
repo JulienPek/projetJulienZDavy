@@ -3,7 +3,7 @@
     <div class="card-body">
         <h5 class="card-title"><?php the_title() ?></h5>
         <h6 class="card-subtitle mb-2 text-muted"><?php the_category() ?></h6>
-        <ul>
+        <ul> 
             <?php
             the_terms(get_the_ID(), 'sport', '<li>', '</li><li>', '</li>');
             ?>

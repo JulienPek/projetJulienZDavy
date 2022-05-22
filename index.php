@@ -11,7 +11,7 @@
     <?php endforeach; ?>
 </ul>
 
-<?php if (have_posts()) : ?>
+<?php if (have_posts()) : ?> 
     <div class="row">
 
         <?php while (have_posts()) : the_post(); ?>

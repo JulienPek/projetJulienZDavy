@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!-- wp_list_categories(['taxonomy' => 'sport', 'title_li' => '']);  -->
-
+ 
 <h1><?= //var_dump(get_queried_object()) 
     esc_html(get_queried_object()->name) ?></h1>
 

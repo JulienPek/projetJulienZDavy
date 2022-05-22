@@ -92,7 +92,7 @@ function montheme_init()
         'menu_icon' => 'dashicons-building',
         'suuports' => ['title', 'editor', 'thumbnails'],
         'show_in_rest' => true,
-        'has_archive' => true,
+        'has_archive' => true, 
     ]);
 }
 

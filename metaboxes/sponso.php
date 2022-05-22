@@ -28,7 +28,7 @@ class SponsoMetaBox
         <input type="checkbox" name="<?= self::META_KEY ?>" value="1" <?php checked($value, '1') ?>><!-- $value === '1' ? 'checked' : '' -->
         <label for="monthemesponso">Cet article est sponsorisé ?</label>
 <?php
-    }
+    } 
 
     public static function save($post)
     {
