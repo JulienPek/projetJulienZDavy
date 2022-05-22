@@ -66,11 +66,37 @@ function montheme_pagination()
     echo '</nav>';
 }
 
-function montheme_init(){
-    register_taxonomy('')
+function montheme_init()
+{
+    register_taxonomy('sport', 'post', [
+        'labels' => [
+            'name' => 'Sport',
+            'singular_name' => 'Sport',
+            'plural_name' => 'Sports',
+            'search_items' => 'Rechercher des sports',
+            'all_items' => 'Tous les sports',
+            'edit_item' => 'Modifier le sport',
+            'update_item' => 'Mettre à jour le sport',
+            'add_new_item' => 'Ajouter un sport',
+            'new_item_name' => 'Nouveau sport',
+            'menu_name' => 'Sports',
+        ],
+        'show_in_rest' => true,
+        'hierarchical' => true,
+        'show_admin_column' => true,
+    ]);
+    register_post_type('bien', [
+        'label' => 'Bien',
+        'public' => true,
+        'menu_position' => 3,
+        'menu_icon' => 'dashicons-building',
+        'suuports' => ['title', 'editor', 'thumbnails'],
+        'show_in_rest' => true,
+        'has_archive' => true,
+    ]);
 }
 
-add_action('ini', 'montheme_init');
+add_action('init', 'montheme_init');
 add_action('after_setup_theme', 'montheme_supports');
 add_action('wp_enqueue_scripts', 'montheme_register_assests');
 add_filter('document_title_separator', 'montheme_title_separator');

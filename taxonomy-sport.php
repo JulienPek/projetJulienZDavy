@@ -1,8 +1,11 @@
 <?php get_header(); ?>
+<!-- wp_list_categories(['taxonomy' => 'sport', 'title_li' => '']);  -->
 
-<?php // wp_list_categories(['taxonomy' => 'sport', 'title_li' => '']); 
-?>
+<h1><?= //var_dump(get_queried_object()) 
+    esc_html(get_queried_object()->name) ?></h1>
+
 <?php $sports = get_terms(['taxonomy' => 'sport']); ?>
+<?php if (is_array($sports)): ?>
 <ul class="nav nav-pills my-4">
     <?php foreach ($sports as $sport) : ?>
         <li class="nav-item">
@@ -10,6 +13,7 @@
         </li>
     <?php endforeach; ?>
 </ul>
+<?php endif; ?>
 
 <?php if (have_posts()) : ?>
     <div class="row">
