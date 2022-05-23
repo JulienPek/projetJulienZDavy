@@ -1,5 +1,6 @@
 <?php
 get_header();
+// get_template_part('template-parts/content', 'front-page');
 
 if (have_posts()) :
     while (have_posts()) : the_post();
