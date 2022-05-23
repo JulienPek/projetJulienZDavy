@@ -6,7 +6,7 @@
     <div class="row">
         <?php while (have_posts()) : the_post(); ?>
             <div class="col-sm-4">
-                <?php get_template_part('parts/card', 'post'); ?>
+                <?php get_template_part('parts/card', 'boardgame'); ?>
             </div>
         <?php endwhile ?>
     </div>

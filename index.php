@@ -2,11 +2,11 @@
 
 <?php // wp_list_categories(['taxonomy' => 'sport', 'title_li' => '']); 
 ?>
-<?php $sports = get_terms(['taxonomy' => 'sport']); ?>
+<?php $gamecats = get_terms(['taxonomy' => 'gamecats']); ?>
 <ul class="nav nav-pills my-4">
-    <?php foreach ($sports as $sport) : ?>
+    <?php foreach ($gamecats as $gamecat) : ?>
         <li class="nav-item">
-            <a href="<?= get_term_link($sport) ?>" class="nav-link <?= is_tax('sport', $sport->term_id) ? 'active' : '' ?>"><?= $sport->name ?></a>
+            <a href="<?= get_term_link($gamecat) ?>" class="nav-link <?= is_tax('gamecat', $gamecat->term_id) ? 'active' : '' ?>"><?= $gamecat->name ?></a>
         </li>
     <?php endforeach; ?>
 </ul>

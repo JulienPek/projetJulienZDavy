@@ -5,7 +5,7 @@
         <h6 class="card-subtitle mb-2 text-muted"><?php the_category() ?></h6>
         <ul> 
             <?php
-            the_terms(get_the_ID(), 'sport', '<li>', '</li><li>', '</li>');
+            the_terms(get_the_ID(), 'gamecats', '<li>', '</li><li>', '</li>');
             ?>
         </ul>
         <?php

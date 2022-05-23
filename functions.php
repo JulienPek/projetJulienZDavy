@@ -5,6 +5,14 @@ function montheme_supports()
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
+    add_theme_support('custom-logo', [
+        'height' => '200px',
+        'width' => '200px',
+        'flex-height' => true,
+        'flex-width' => true,
+        'header-text' => array('site-title', 'site-description'),
+        'unlink-homepage-logo' => true,
+    ]);
     register_nav_menu('header', 'En tête du menu');
     register_nav_menu('footer', 'Pied de page');
 
@@ -68,31 +76,33 @@ function montheme_pagination()
 
 function montheme_init()
 {
-    register_taxonomy('sport', 'post', [
+    register_taxonomy('gamecats', 'boardgame', [
         'labels' => [
-            'name' => 'Sport',
-            'singular_name' => 'Sport',
-            'plural_name' => 'Sports',
-            'search_items' => 'Rechercher des sports',
-            'all_items' => 'Tous les sports',
-            'edit_item' => 'Modifier le sport',
-            'update_item' => 'Mettre à jour le sport',
-            'add_new_item' => 'Ajouter un sport',
-            'new_item_name' => 'Nouveau sport',
-            'menu_name' => 'Sports',
+            'name' => 'Gamecats',
+            'singular_name' => 'Gamecat',
+            'plural_name' => 'Gamecats',
+            'search_items' => 'Rechercher des gamecats',
+            'all_items' => 'Tous les gamecats',
+            'edit_item' => 'Modifier le gamecat',
+            'update_item' => 'Mettre à jour le gamecat',
+            'add_new_item' => 'Ajouter un gamecat',
+            'new_item_name' => 'Nouveau gamecat',
+            'menu_name' => 'Gamecats',
         ],
         'show_in_rest' => true,
         'hierarchical' => true,
         'show_admin_column' => true,
+        'public' => true,
+        'has_archive' => true,
     ]);
-    register_post_type('bien', [
-        'label' => 'Bien',
+    register_post_type('boardgame', [
+        'label' => 'bordgame',
         'public' => true,
         'menu_position' => 3,
-        'menu_icon' => 'dashicons-building',
+        'menu_icon' => 'dashicons-buddicons-activity',
         'suuports' => ['title', 'editor', 'thumbnails'],
         'show_in_rest' => true,
-        'has_archive' => true, 
+        'has_archive' => true,
     ]);
 }
 
