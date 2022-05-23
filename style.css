@@ -1,11 +1,21 @@
-/*
-Theme Name: Mon theme
+/* 
+Theme Name: SiteVitrine
 */
 
 body {
-    background-color: aqua;
+    background-color: rgb(185, 236, 236);
 }
 
-#site-title {
-    color: green;
+.card {
+    background-color: bisque;
 }
+
+.z_link {
+    z-index: 2;
+    position: relative;
+}
+
+/* img {
+    width: 100%;
+    object-fit: contain;
+} */

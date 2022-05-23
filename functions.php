@@ -1,66 +1,107 @@
 <?php
-
 function montheme_setup()
 {
-    add_theme_support('post-thumbnails');
-    add_theme_support('custom-logo');
     register_nav_menu('main', 'menu_principal');
+    add_theme_support('custom-logo');
+    add_theme_support('post-thumbnails');
 }
 
-function mon_theme_scripts()
+function montheme_enqueue_styles()
 {
-    wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css');
+    wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
+    wp_enqueue_style('bootstrap-icon', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css');
     wp_enqueue_style('style', get_stylesheet_uri());
-    wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js', [], false, true);
+    wp_enqueue_script('script', get_template_directory_uri());
+    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', [], false, true);
+}
+// fonction pour créer un nouveau type de contenu avec taxonmie
+function mon_theme_custom_post_type()
+{
+    register_post_type(
+        'boardgame',
+        array(
+            'labels' => array(
+                'name' => 'boardgames',
+                'singular_name' => 'boardgame',
+            ),
+            'public' => true,
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'show_in_rest' => true,
+            'menu_position' => 3,
+            'menu_icon' => 'dashicons-buddicons-activity',
+            'has_archive' => true,
+            'taxonomies' => array('gamecats')
+        )
+    );
 }
 
-function mon_theme_custom_types()
+// Fonction pour créer une taxonomy personalisé (category et tags(etiquettes))
+function montheme_taxonomy()
 {
-    register_post_type('boardgames', [
-        'labels' => [
-            'name' => 'Boardgames',
-            'singular_name' => 'Boardgame'
-        ],
-        'public' => true,
-        'menu_position' => 3,
-        'menu_icon' => 'dashicons-buddicons-activity',
-        'supports' => ['title', 'editor', 'thumbnail'],
-        'show_in_rest' => true,
-        'has_archive' => true,
-        'taxonomies' => ['types'],
-    ]);
-}
-
-function montheme_custom_taxonomies()
-{
-    register_taxonomy('gamecat', 'boardgames', [
+    register_taxonomy('gamecats', 'boardgame', [
         'labels' => [
             'name' => 'Gamecats',
-            'singular_name' => 'Gamecat'
+            'singular_name' => 'Gamecat',
         ],
         'public' => true,
         'hierarchical' => true,
-        'show_admin_column' => true,
+        'has_archive' => true,
         'show_in_rest' => true,
-        'default_term' => 'Uncategorised'
+        'show_admin_column' => true
     ]);
 }
 
-function montheme_menu_cls($classes)
+// fonction pour ajouter une classe css a un menu et plus particulièrement à un <li>
+function montheme_menu_class_css($classes)
 {
-    $classes[] = "nav-item";
+    $classes[] = "nav-item me-4";
     return $classes;
 }
 
-function montheme_menu_link_atts($atts)
+// Fonction pour ajouter une classe css à un <a>
+function montheme_menu_link_css($atts)
 {
-    $atts['class'] = "nav-link";
+    $atts['class'] = 'nav-link';
+    return $atts;
+}
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+
+function wpdocs_custom_excerpt_length($length)
+{
+    return 25;
+}
+
+function monTheme_dropdown_class($classes)
+{
+    $classes[] = "dropdown-menu  bg-dark";
+    return $classes;
+}
+
+function monTheme_dropdown_menu_attr($atts, $items, $depth)
+{
+    $dropdown = [84];
+    if (in_array($items->ID, $dropdown)) {
+        $atts['class'] = "nav-link dropdown-toggle";
+        $atts['id'] = "navbarDropdown";
+        $atts['role'] = "button";
+        $atts['data-bs-toggle'] = "dropdown";
+        // Penser à ajouter aux éléments de sous menu dans l'admin la classe dropdown-item
+    }
     return $atts;
 }
 
 add_action('after_setup_theme', 'montheme_setup');
-add_action('init', 'mon_theme_custom_types');
-add_action('init', 'montheme_custom_taxonomies');
-add_action('wp_enqueue_scripts', 'mon_theme_scripts');
-add_filter('nav_menu_css_class', 'montheme_menu_cls');
-add_filter('nav_menu_link_attributes', 'montheme_menu_link_atts');
+add_action('init', 'mon_theme_custom_post_type');
+add_action('init', 'montheme_taxonomy');
+add_action('wp_enqueue_scripts', 'montheme_enqueue_styles');
+add_filter('nav_menu_css_class', 'montheme_menu_class_css');
+add_filter('nav_menu_link_attributes', 'montheme_menu_link_css');
+add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
+add_filter('nav_menu_submenu_css_class', 'monTheme_dropdown_class');
+add_filter('nav_menu_link_attributes', 'monTheme_dropdown_menu_attr', 10, 3);
