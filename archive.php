@@ -5,7 +5,6 @@ get_header();
 // var_dump($query);
 ?>
 <div class="container mb-2">
-    <h1>Catégories</h1>
     <?php
 
     ?> <div class="row justify-content-between"> <?php

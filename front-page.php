@@ -13,6 +13,7 @@ if (have_posts()) :
                     <img class="img-fluid" src="<?php the_field('image_a_gauche') ?>" alt="">
                 </div>
                 <div class="col">
+                    <p class="text-left"><?php the_field('texte_a_droite') ?></p>
                 </div>
             </div>
         </div>
