@@ -9,7 +9,7 @@ if (have_posts()) :
             <h2><?php the_title() ?></h2>
             <div><?php the_content() ?></div>
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                     <img class="img-fluid" src="<?php the_field('image_a_gauche') ?>" alt="">
                 </div>
                 <div class="col">
