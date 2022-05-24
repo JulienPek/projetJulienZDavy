@@ -10,6 +10,11 @@ body {
     background-color: bisque;
 }
 
+.z_link {
+    z-index: 2;
+    position: relative;
+}
+
 /* img {
     width: 100%;
     object-fit: contain;

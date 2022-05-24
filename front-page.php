@@ -16,6 +16,7 @@ if (have_posts()) :
                     <p class="text-left"><?php the_field('texte_a_droite') ?></p>
                 </div>
             </div>
+
         </div>
 <?php endwhile;
 endif;
