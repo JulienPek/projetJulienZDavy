@@ -97,12 +97,37 @@ function monTheme_dropdown_menu_attr($atts, $items, $depth)
     return $atts;
 }
 
+function montheme_category_display($links){
+    var_dump($links);
+}    
+
+
+function wpb_hook_javascript() {
+    ?>
+        <script>
+          //var audio = new Audio("C:\xampp\htdocs\miniBlogProjet\images\AWPShooting-CS-GOSoundEffect.mp3");
+            var audio = new Audio("C:/xampp/htdocs/miniBlogProjet/images/AWPShooting-CS-GOSoundEffect.mp3");
+
+            AwpBtns = document.querySelectorAll(".AwpBtn");
+            foreach(AwpBtns as AwpBtn){
+            AwpBtn.onclick = function () {
+                audio.play();
+            }}
+
+        </script>
+    <?php
+}
+
+
+
 add_action('after_setup_theme', 'montheme_setup');
 add_action('init', 'mon_theme_custom_post_type');
 add_action('init', 'montheme_taxonomy');
+add_action('wp_head', 'wpb_hook_javascript');
 add_action('wp_enqueue_scripts', 'montheme_enqueue_styles');
 add_filter('nav_menu_css_class', 'montheme_menu_class_css');
 add_filter('nav_menu_link_attributes', 'montheme_menu_link_css');
 add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
 add_filter('nav_menu_submenu_css_class', 'monTheme_dropdown_class');
 add_filter('nav_menu_link_attributes', 'monTheme_dropdown_menu_attr', 10, 3);
+//add_filter('term_links-gamecats', 'montheme_category_display');
