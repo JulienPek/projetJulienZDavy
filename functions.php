@@ -80,7 +80,7 @@ function wpdocs_custom_excerpt_length($length)
 
 function monTheme_dropdown_class($classes)
 {
-    $classes[] = "dropdown-menu  bg-dark";
+    $classes[] = "dropdown-menu bg-dark";
     return $classes;
 }
 
@@ -103,28 +103,9 @@ function montheme_category_display($links)
 }
 
 
-/* function wpb_hook_javascript() {
-    ?>
-        <script>
-          //var audio = new Audio("C:\xampp\htdocs\miniBlogProjet\images\AWPShooting-CS-GOSoundEffect.mp3");
-            var audio = new Audio("C:/xampp/htdocs/miniBlogProjet/images/AWPShooting-CS-GOSoundEffect.mp3");
-
-            AwpBtns = document.querySelectorAll(".AwpBtn");
-            foreach(AwpBtns as AwpBtn){
-            AwpBtn.onclick = function () {
-                audio.play();
-            }}
-
-        </script>
-    <?php
-} */
-
-
-
 add_action('after_setup_theme', 'montheme_setup');
 add_action('init', 'mon_theme_custom_post_type');
 add_action('init', 'montheme_taxonomy');
-/* add_action('wp_head', 'wpb_hook_javascript'); */
 add_action('wp_enqueue_scripts', 'montheme_enqueue_styles');
 add_filter('nav_menu_css_class', 'montheme_menu_class_css');
 add_filter('nav_menu_link_attributes', 'montheme_menu_link_css');
