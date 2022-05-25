@@ -16,11 +16,11 @@ if (have_posts()) :
 ?>
        
        
-       <div class="container">
+       <div class="container bg-light">
             <div class="row">
                 <div class="col-5">
                     
-                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <?php
                             if  ($queryGame->have_posts()) :
@@ -34,7 +34,7 @@ if (have_posts()) :
                         ?> " data-bs-interval="3000">
                         <img src=" <?php
                         
-                              echo get_the_post_thumbnail_url(); ?>" class="d-block w-100" alt="...">
+                              echo get_the_post_thumbnail_url(); ?>" class="d-block w-100 card-img-top-V2" alt="...">
                         </div>
                         <?php
                         endwhile;
@@ -45,12 +45,12 @@ if (have_posts()) :
                     </div>
                 </div>
                 <div class="col-7">
-                    <p class="text-left"><?php the_field('texte_a_droite') ?></p>
-                    <p class="text-left"><?php the_field('text_droite') ?></p>
+                    <p class="text-center"><?php the_field('texte_a_droite') ?></p>
+                    <p class="text-center"><?php the_field('text_droite') ?></p>
                 </div>
                 <div class="row">
                     <div class="col-6 offset-3"> 
-                        <button type="button" class="enterBtn btn btn-primary w-100 p-3 mt-5">Enter narnai !</button>
+                        <button type="button" class="enterBtn btn btn-primary w-100 p-3 my-5">Let's goooo !</button>
                     </div>
                 </div>
             </div>
