@@ -75,7 +75,7 @@ function montheme_menu_link_css($atts)
 
 function wpdocs_custom_excerpt_length($length)
 {
-    return 25;
+    return 23;
 }
 
 function monTheme_dropdown_class($classes)
