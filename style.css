@@ -590,6 +590,10 @@ a {
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+    .card-img-top-V2 {
+        height: 15rem;
+    }
+
     .card-img-top {
         height: 17rem;
     }
@@ -597,6 +601,10 @@ a {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    .card-img-top-V2 {
+        height: 20rem;
+    }
+
     .card-img-top {
         height: 15rem;
     }
@@ -608,6 +616,10 @@ a {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    .card-img-top-V2 {
+        height: 20rem;
+    }
+
     .card-img-top {
         height: 15rem;
     }
@@ -619,6 +631,10 @@ a {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+    .card-img-top-V2 {
+        height: 25rem;
+    }
+
     .card-img-top {
         height: 19rem;
     }
@@ -629,6 +645,10 @@ a {
 }
 
 @media (min-width: 1400px) {
+    .card-img-top-V2 {
+        height: 35rem;
+    }
+
     .card-img-top {
         height: 19rem;
     }
@@ -639,6 +659,10 @@ a {
 }
 
 @media (min-width: 1600px) {
+    .card-img-top-V2 {
+        height: 35rem;
+    }
+
     .card-img-top {
         height: 19rem;
     }

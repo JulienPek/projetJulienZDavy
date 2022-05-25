@@ -7,11 +7,52 @@ if (have_posts()) :
 ?>
 
 
-        <div class="container py-3">
+        <div class="bg-light container py-3">
             <div class="row">
                 <div class="col-5 pe-3 slit-in-vertical">
-                    <img class="singleBoardgameImg" src="<?php the_post_thumbnail_url(); ?>">
+
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="<?php the_post_thumbnail_url(); ?>" class="card-img-top-V2 d-block w-100" alt="...">
+                        </div>
+                        <?php
+                        if(!empty(get_field('carousel_1'))){
+                        ?>
+                        <div class="carousel-item">
+                        <img src="<?php the_field('carousel_1'); ?>" class="card-img-top-V2 d-block w-100" alt="...">
+                        </div>
+                        <?php
+                        }
+                         ?>
+                        <?php
+                        if(!empty(get_field('carousel_2'))){
+                        ?>
+                        <div class="carousel-item">
+                        <img src="<?php the_field('carousel_2'); ?>" class="card-img-top-V2 d-block w-100" alt="...">
+                        <?php
+                        }
+                         ?>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+
+
                 </div>    
+
+
+
+
+
+
                 <div class="col-7 ps-5">
                     
                     <div class="row bounce-in-right">
