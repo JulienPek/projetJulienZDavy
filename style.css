@@ -717,3 +717,7 @@ a {
 li:hover .dropdown-item:hover {
     background-color: grey;
 }
+
+.dropdown-menu {
+    left: auto !important;
+}
