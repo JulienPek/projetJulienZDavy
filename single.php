@@ -7,7 +7,7 @@ if (have_posts()) :
 ?>
 
 
-        <div class="container py-3"> 
+        <div class="container py-3">
             <div class="row">
                 <div class="col-5 pe-3 slit-in-vertical">
                     <img class="singleBoardgameImg" src="<?php the_post_thumbnail_url(); ?>">
@@ -32,7 +32,7 @@ if (have_posts()) :
                         </i><i class="bi bi-clock display-6"></i><p>Duree d'une partie : <?php the_field("duree_de_la_partie") ?></p>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
             <div class="row py-5">
                 <div class="col-5 text-center"><?php

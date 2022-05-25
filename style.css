@@ -3,11 +3,13 @@ Theme Name: SiteVitrine
 */
 
 body {
-    background-color: rgb(185, 236, 236);
+    background-color: rgb(25, 59, 65);
 }
 
 .card {
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
+    border: 0px solid white;
+    width: 75%;
 }
 
 .singleBoardgameImg {
@@ -568,4 +570,120 @@ body {
         -webkit-transform: translateZ(0) rotateX(0);
         transform: translateZ(0) rotateX(0);
     }
+}
+
+.card-footer {
+    background-color: rgb(255, 255, 255);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 17rem;
+    object-fit: contain;
+}
+
+a {
+    text-decoration: none;
+    color: #008CBA;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .card-img-top {
+        height: 17rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .card-img-top {
+        height: 15rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .card-img-top {
+        height: 15rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .card-img-top {
+        height: 19rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .card-img-top {
+        height: 19rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .card-img-top {
+        height: 19rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+.z_link {
+    z-index: 5;
+    position: relative;
+}
+
+.z_index {
+    z-index: 2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+    /* z-index: 5; */
+}
+
+.overlay_container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    padding: 1rem;
+    /*     top: 50%;
+    left: 50%; */
+    /*     -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    text-align: center;
 }
