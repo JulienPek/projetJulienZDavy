@@ -8,7 +8,7 @@ function excerpt($limit)
 $i = 1; // index pour rendre unique chaque card
 ?>
 <div class="container mb-2">
-    <h1 class="text-center text-light mb-5">Catégorie : <?php echo $query->name; ?></h1>
+    <h1 class="bg-secondary text-center text-light mb-5 pb-2 crotte">Catégorie : <?php echo $query->name; ?></h1>
     <?php
 
     ?> <div class="row g-3"> <?php
@@ -61,7 +61,7 @@ $i = 1; // index pour rendre unique chaque card
                                 <div class="text"><?php the_field('resume_overlay'); ?></div>
                             </div>
                         </div>
-                        <div class="card-footer h-100  z_link">
+                        <div class="card-footer h-100  z_index">
                             <div class="d-flex"><?php the_terms(get_the_ID(), 'gamecats', '<p>', '</p> <p>', '</p>'); ?></div>
                         </div>
                     </div>

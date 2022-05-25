@@ -648,18 +648,11 @@ a {
     }
 }
 
-.z_link {
+.z_index {
     z-index: 3;
     position: relative;
 }
 
-<<<<<<< HEAD
-.z_index {
-    z-index: 1;
-}
-
-=======
->>>>>>> temp-branch
 .overlay {
     position: absolute;
     top: 0;
@@ -691,4 +684,8 @@ a {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); */
     text-align: center;
+}
+
+.crotte {
+    border-radius: 0 0 15px 15px;
 }
