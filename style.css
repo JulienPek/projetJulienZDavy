@@ -653,10 +653,6 @@ a {
     position: relative;
 }
 
-.z_index {
-    z-index: 2;
-}
-
 .overlay {
     position: absolute;
     top: 0;
@@ -673,6 +669,8 @@ a {
 
 .overlay_container:hover .overlay {
     opacity: 1;
+    animation: fadeInLeft;
+    animation-duration: .5s;
 }
 
 .text {

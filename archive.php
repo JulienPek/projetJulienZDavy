@@ -38,11 +38,11 @@ $i = 1; // index pour rendre unique chaque card
                                             </div>
                                         <?php   } ?>
                                     </div>
-                                    <button class="carousel-control-prev z_index" type="button" data-bs-target="<?php echo '#carou_' . $i; ?>" data-bs-slide="prev">
+                                    <button class="carousel-control-prev visually-hidden" type="button" data-bs-target="<?php echo '#carou_' . $i; ?>" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Previous</span>
                                     </button>
-                                    <button class="carousel-control-next z_index" type="button" data-bs-target="<?php echo '#carou_' . $i; ?>" data-bs-slide="next">
+                                    <button class="carousel-control-next visually-hidden" type="button" data-bs-target="<?php echo '#carou_' . $i; ?>" data-bs-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Next</span>
                                     </button>
