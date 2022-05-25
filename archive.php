@@ -8,7 +8,7 @@ function excerpt($limit)
 $i = 1; // index pour rendre unique chaque card
 ?>
 <div class="container mb-2">
-    <h1 class="text-center text-light mb-5">Catégorie : <?php echo $query->name; ?></h1>
+    <h1 class="bg-secondary text-center text-light mb-5 pb-2 crotte">Catégorie : <?php echo $query->name; ?></h1>
     <?php
 
     ?> <div class="row g-3"> <?php
@@ -38,11 +38,11 @@ $i = 1; // index pour rendre unique chaque card
                                             </div>
                                         <?php   } ?>
                                     </div>
-                                    <button class="carousel-control-prev z_index" type="button" data-bs-target="<?php echo '#carou_' . $i; ?>" data-bs-slide="prev">
+                                    <button class="carousel-control-prev visually-hidden" type="button" data-bs-target="<?php echo '#carou_' . $i; ?>" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Previous</span>
                                     </button>
-                                    <button class="carousel-control-next z_index" type="button" data-bs-target="<?php echo '#carou_' . $i; ?>" data-bs-slide="next">
+                                    <button class="carousel-control-next visually-hidden" type="button" data-bs-target="<?php echo '#carou_' . $i; ?>" data-bs-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Next</span>
                                     </button>
@@ -61,7 +61,7 @@ $i = 1; // index pour rendre unique chaque card
                                 <div class="text"><?php the_field('resume_overlay'); ?></div>
                             </div>
                         </div>
-                        <div class="card-footer h-100  z_link">
+                        <div class="card-footer h-100  z_index">
                             <div class="d-flex"><?php the_terms(get_the_ID(), 'gamecats', '<p>', '</p> <p>', '</p>'); ?></div>
                         </div>
                     </div>

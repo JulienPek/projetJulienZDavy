@@ -672,13 +672,9 @@ a {
     }
 }
 
-.z_link {
-    z-index: 5;
-    position: relative;
-}
-
 .z_index {
-    z-index: 2;
+    z-index: 3;
+    position: relative;
 }
 
 .overlay {
@@ -691,12 +687,14 @@ a {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #008CBA;
+    background-color: #0087b4;
     /* z-index: 5; */
 }
 
 .overlay_container:hover .overlay {
     opacity: 1;
+    animation: fadeInLeft;
+    animation-duration: .5s;
 }
 
 .text {
@@ -710,4 +708,8 @@ a {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); */
     text-align: center;
+}
+
+.crotte {
+    border-radius: 0 0 15px 15px;
 }
