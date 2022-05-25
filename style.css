@@ -653,10 +653,13 @@ a {
     position: relative;
 }
 
+<<<<<<< HEAD
 .z_index {
     z-index: 1;
 }
 
+=======
+>>>>>>> temp-branch
 .overlay {
     position: absolute;
     top: 0;
